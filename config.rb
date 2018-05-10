@@ -17,7 +17,7 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Code highlighting
 
-#activate :rouge_syntax
+activate :syntax
 
 # Until fog can deal with a . in the bucket name without an SSL mismatch
 # we need to host on Heroku
