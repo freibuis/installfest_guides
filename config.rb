@@ -1,5 +1,5 @@
 # Page config
-page "/guides/*", :layout => "guides"
+page "/guides/*", :layout => "guides" , content_type: 'text/html'
 
 # Env Setup
 set :css_dir, 'stylesheets'
@@ -17,27 +17,27 @@ set :markdown, :fenced_code_blocks => true, :smartypants => true
 
 # Code highlighting
 
-activate :rouge_syntax
+#activate :rouge_syntax
 
 # Until fog can deal with a . in the bucket name without an SSL mismatch
 # we need to host on Heroku
 #
-aws_creds = File.join(File.dirname(__FILE__), 'aws.yml')
-creds = YAML::load_file(aws_creds)
+#aws_creds = File.join(File.dirname(__FILE__), 'aws.yml')
+#creds = YAML::load_file(aws_creds)
 
-activate :s3_sync do |s3_sync|
-  s3_sync.bucket                     = creds['fog_directory'] # The name of the S3 bucket you are targetting. This is globally unique.
-  s3_sync.region                     = creds['fog_region']
-  s3_sync.aws_access_key_id          = creds['aws_access_key_id']
-  s3_sync.aws_secret_access_key      = creds['aws_secret_access_key']
-  s3_sync.delete                     = true # We delete stray files by default.
-  s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior...
-  s3_sync.path_style                 = true
-  s3_sync.acl                        = 'public-read'
-  s3_sync.verbose                    = false
-  s3_sync.prefer_gzip                = true
-  s3_sync.reduced_redundancy_storage = false
-end
+#activate :s3_sync do |s3_sync|
+#  s3_sync.bucket                     = creds['fog_directory'] # The name of the S3 bucket you are targetting. This is globally unique.
+#  s3_sync.region                     = creds['fog_region']
+#  s3_sync.aws_access_key_id          = creds['aws_access_key_id']
+#  s3_sync.aws_secret_access_key      = creds['aws_secret_access_key']
+#  s3_sync.delete                     = true # We delete stray files by default.
+#  s3_sync.after_build                = false # We chain after the build step by default. This may not be your desired behavior...
+#  s3_sync.path_style                 = true
+#  s3_sync.acl                        = 'public-read'
+#  s3_sync.verbose                    = false
+#  s3_sync.prefer_gzip                = true
+#  s3_sync.reduced_redundancy_storage = false
+#end
 
 # Build-specific configuration
 configure :build do
