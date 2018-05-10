@@ -2,9 +2,9 @@
 page "/guides/*", :layout => "guides" , content_type: 'text/html'
 
 # Env Setup
-set :css_dir, 'stylesheets'
+set :css_dir,    'assets/stylesheets'
 
-set :js_dir, 'javascripts'
+set :js_dir,     'assets/javascripts'
 
 set :images_dir, 'images'
 
