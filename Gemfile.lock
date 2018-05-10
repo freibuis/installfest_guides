@@ -148,7 +148,7 @@ DEPENDENCIES
   bourbon (= 3.1.8)
   fog-aws (= 3.0.0)
   middleman (= 4.2.1)
-  middleman-livereload
+  middleman-livereload (= 3.4.6)
   middleman-syntax (= 3.0)
   neat (= 1.4.0)
   redcarpet (= 3.4.0)
