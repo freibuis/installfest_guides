@@ -6,5 +6,7 @@ build/
 .envrc
 .idea/
 .vscode/
+.sass-cache/
 
+# Do not Store Gem Files into git project. 
 vendor/
